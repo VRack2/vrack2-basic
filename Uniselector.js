@@ -17,7 +17,7 @@ class Uniselector extends Device {
   // --- Параметры устройства ---
   checkOptions() {
     return {
-      doOnEnd: Rule.string().default('reset').enum(['reset', 'nothing', 'reverse'])
+      doOnEnd: Rule.string().default('reset')
         .description('Действие после достижения последнего выхода: `reset` - вернуться к первому, `nothing` - остановиться, `reverse` - инвертировать направление'),
       outputs: Rule.number().default(16).integer().min(0) // Позволим 0 как крайний случай
         .description('Количество динамических выходов переключателя (gate1, gate2, ..., gateN)'),
